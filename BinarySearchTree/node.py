@@ -8,11 +8,22 @@ class Node:
     def __init__(self, key, data):
         self.__key = key
         self.__data = data
+        self.__parent = None
+        self.__left = None
+        self.__right = None
+
+    def __del__(self):
+        self.__key = None
+        self.__data = None
+        self.__parent = None
         self.__left = None
         self.__right = None
     
 
     #SETTERS -------------------------------------------------------------
+    def setParent(self, node):
+        self.__parent = node
+    
     def setRightChild(self, node):
         self.__right = node
 
@@ -26,6 +37,9 @@ class Node:
 
     def getData(self):
         return self.__data
+
+    def getParent(self):
+        return self.__parent
 
     def getLeftChild(self):
         return self.__left
