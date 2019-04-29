@@ -75,18 +75,28 @@ class BinarySearchTree:
         old_node = self.getNode(key)
     
         if old_node.getLeftChild() is None and old_node.getRightChild() is None:
+            print("removeNode() success: Node with key " + str(old_node.getKey()) + " removed." )
             old_node.__del__()
+
+            #TODO: fix
 
         elif old_node.getLeftChild() is None and old_node.getRightChild() is not None:
-            old_node.getRightChild().setParent = None
+            
+
+
             if old_node == self.__root:
                 self.__root = old_node.getRightChild()
+                
+            
+            
             old_node.__del__()
+            print("removeNode() success: Node with key " + str(old_node.getKey()) + " removed." )
 
         elif old_node.getRightChild() is None and old_node.getLeftChild() is not None:
-            old_node.getLeftChild().setParent = None
+            old_node.getLeftChild().setParent(None)
             if old_node == self.__root:
                 self.__root = old_node.getLeftChild()
+            print("removeNode() success: Node with key " + str(old_node.getKey()) + " removed." )
             old_node.__del__()
 
         else:

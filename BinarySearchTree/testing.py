@@ -9,6 +9,7 @@ from binary_search_tree import BinarySearchTree as BST
 from avl import AVL
 
 
+
 #TESTING BinarySearchTree -------------------------------------------------------------------------
 
 tree = BST()           
@@ -44,16 +45,16 @@ tree.insertNode(1, "data_1")
 # tree.insertNode(0, "data_0")
 tree.insertNode(2, "data_2")
 
-tree.removeNode(0)
-print(tree.getRoot().getKey())
+# tree.removeNode(0)
+# print(tree.getRoot().getKey())
 
-# print( "Right child of 0: " + str(tree.getNode(0).getRightChild().getKey()) )
-# print( "Parent of 2: " + str(tree.getNode(2).getParent().getKey()) )
-# print(tree.getNode(1).getKey())
+print( "Right child of 0: " + str(tree.getNode(0).getRightChild().getKey()) )
+print( "Parent of 2: " + str(tree.getNode(2).getParent().getKey()) )
+print(tree.getNode(1).getKey())
 
-# tree.removeNode(1)
-# print( "Right child of 0: " + str(tree.getNode(0).getRightChild().getKey()) )
-# print( "Parent of 2: " + str(tree.getNode(2).getParent().getKey()) )
+tree.removeNode(1)
+print( "Right child of 0: " + str(tree.getNode(0).getRightChild().getKey()) )
+print( "Parent of 2: " + str(tree.getNode(2).getParent().getKey()) )
 # print(tree.getNode(1))
 
 # tree.insertNode(-1, "data_-1")
@@ -67,4 +68,3 @@ print(tree.getRoot().getKey())
 # print( "Left child of 0: " + str(tree.getNode(0).getLeftChild().getKey()) )
 # print( "Parent of -2: " + str(tree.getNode(-2).getParent().getKey()) )
 # print(tree.getNode(-1))
-
