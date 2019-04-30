@@ -12,15 +12,12 @@ class BinarySearchTree():
         self.__root = None
         self.__errors = []
 
-
-    
-
     def error_handler(self, node):
         error = str(datetime.now()) + ": " + str(node.get_data())
         self.__errors.append(error)
         print(error)
 
-    def insert_node(self, key, data):
+    def insert_node(self, key, data) -> Node:
 
         try:
             key == int(key)
@@ -56,7 +53,7 @@ class BinarySearchTree():
 
     #GETTERS    -----------------------------------------------------------------------------------------------
 
-    def get_node(self, key):
+    def get_node(self, key) -> Node:
 
         if self.__root == None:
             error = Node("Error", "get_node() error: Empty tree.")
@@ -79,7 +76,7 @@ class BinarySearchTree():
         
     #PRINTERS   -----------------------------------------------------------------------------------------------
 
-    def print_node(self, key):
+    def print_node(self, key) -> Node:
 
         if self.get_node(key).get_key() == "error":
             error = Node("error", "print_node() error: Attempted to print non-Node object")
