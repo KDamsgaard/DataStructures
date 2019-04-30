@@ -21,30 +21,30 @@ class Node:
     
 
     #SETTERS -------------------------------------------------------------
-    def setParent(self, node):
+    def set_parent(self, node):
         self.__parent = node
     
-    def setRightChild(self, node):
+    def set_right(self, node):
         self.__right = node
 
-    def setLeftChild(self, node):
+    def set_left(self, node):
         self.__left = node
 
     #GETTERS -------------------------------------------------------------
 
-    def getKey(self):
+    def get_key(self):
         return self.__key
 
-    def getData(self):
+    def get_data(self):
         return self.__data
 
-    def getParent(self):
+    def get_parent(self):
         return self.__parent
 
-    def getLeftChild(self):
+    def get_left(self):
         return self.__left
 
-    def getRightChild(self):
+    def get_right(self):
         return self.__right
         
 #END OF CLASS "Node" -----------------------------------------------------
