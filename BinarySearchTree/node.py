@@ -1,8 +1,8 @@
-#
-# Kristian Knudsen Damsgaard, 2019
-#
-# A node for use in binary search tree (bst.py)
-#
+"""
+Kristian K. Damsgaard, 2019
+
+A node for use in binary search tree
+"""
 
 class Node:
     def __init__(self, key, data):
@@ -11,7 +11,7 @@ class Node:
         self.__parent = None
         self.__left = None
         self.__right = None
-        self.__height = 0
+        self.__depth = -1
 
     def __del__(self):
         self.__key = None
@@ -19,22 +19,43 @@ class Node:
         self.__parent = None
         self.__left = None
         self.__right = None
-        self.__height = None
+        self.__depth = None
 
-    def calc_and_set_height(self, node):
-        height = self.calculate_height(node)
-        self.set_height(height)
-    
-    def calculate_height(self, node):
-        if node is None:
-            return 0
+    #PRINTERS   ------------------------------------------------------------------------------------
+    def print_node(self) -> str:
+        """
+        Prints information about a node.
+
+        @type node: Node
+        @param node: The node to print
+        """
+
+        parent = "Parent: "
+        left = "Left: "
+        right = "Right: "
+
+        if self.__parent is not None:
+            parent += str(self.__parent.get_key()) + ", "
         else:
-            print ("calcing")
-            return max(self.calculate_height(self.__left), self.calculate_height(self.__right)) + 1
+            parent += "ROOT, "
+        
+        if self.__left is not None:
+            left += str(self.__left.get_key()) + ", "
+        else:
+            left += "None, "
 
+        if self.__right is not None:
+            right += str(self.__right.get_key()) + ", "
+        else:
+            right += "None, "
 
+        result = "_____________________________________\n" \
+            + "Key: " + str(self.__key) + ", depth: " + str(self.__depth) + "\n" \
+            + left + parent + right
 
-    #SETTERS -------------------------------------------------------------
+        print(result)
+
+    #SETTERS    ------------------------------------------------------------------------------------
     def set_parent(self, node):
         self.__parent = node
 
@@ -45,8 +66,8 @@ class Node:
         self.__right = node
 
     def set_height(self, height):
-        self.__height = height
-    #GETTERS -------------------------------------------------------------
+        self.__depth = height
+    #GETTERS    -------------------------------------------------------------------------------------
 
     def get_key(self):
         return self.__key
@@ -64,6 +85,6 @@ class Node:
         return self.__right
     
     def get_height(self):
-        return self.__height
+        return self.__depth
         
 #END OF CLASS "Node" -----------------------------------------------------
